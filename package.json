@@ -1,5 +1,5 @@
 {
-	"name": "doorman",
+	"name": "Scratchify",
 	"version": "2.0.0",
 	"description": "A node backend that works with Scratch to control Spotify on OS X.",
 	"author": "Andi Andreas <nexuister@gmail.com>",
