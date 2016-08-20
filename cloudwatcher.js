@@ -4,7 +4,7 @@ var https = require("https")
 
 var oldVars = {}
 var interval = 1500 // Milliseconds between refresh
-var projectID = "censored"
+var projectID = "93077193"
 
 var spotifyMsg = ""
 var spotifyCallback = function() {

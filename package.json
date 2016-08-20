@@ -1,4 +1,21 @@
 {
-  "name": "Scratchify",
-  "version": "1.1.1"
+	"name": "doorman",
+	"version": "2.0.0",
+	"description": "A node backend that works with Scratch to control Spotify on OS X.",
+	"author": "Andi Andreas <nexuister@gmail.com>",
+	"scripts": {
+		"start": "node cloudwatcher-2.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nexuist/Scratchify"
+	},
+	"bugs": {
+		"url": "https://github.com/nexuist/Scratchify/issues"
+	},
+	"dependencies": {
+		"log-prefix": "0.0.0",
+		"spotify-node-applescript": "0.2.x"
+	},
+	"license": "MIT"
 }

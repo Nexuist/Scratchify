@@ -19,7 +19,7 @@ __TODO__
 
 1. The Scratch project has three cloud variables: `id`, `command`, and `volume`. When a button is pressed, `command` is changed to reflect what button is pressed and `id` is incremented by 1. `volume` can be manipulated directly by the user as it is presented as a UI component.
 
-2. The script requests the JSON endpoint every 1.5 seconds, and compares the new response to the old response to see if the user has changed anything.
+2. The script requests the JSON endpoint every second, and compares the new response to the old response to see if the user has changed anything.
 
 3. The script will work with spotify-node-applescript to proxy events such as "play", "previous track", etc. to the Spotify app.
 
