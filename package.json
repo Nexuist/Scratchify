@@ -4,7 +4,7 @@
 	"description": "A node backend that works with Scratch to control Spotify on OS X.",
 	"author": "Andi Andreas <nexuister@gmail.com>",
 	"scripts": {
-		"start": "node cloudwatcher-2.js"
+		"start": "node cloudwatcher.js"
 	},
 	"repository": {
 		"type": "git",

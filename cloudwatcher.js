@@ -24,7 +24,7 @@ function check() {
 		host: "scratch.mit.edu",
 		path: "/varserver/" + projectID
 	};
-	var request = https.get(opts, function(response) {
+	var request = https.get(opts, function(res) {
 		res.on("data", function (data) {
 			console.log(data);
 		});

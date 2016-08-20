@@ -1,21 +1,39 @@
 ### Introduction
 
-Another one of the projects for our Exploring Computer Science class was to develop some type of project using [Scratch](https://scratch.mit.edu). Scratchify was my submission - a frontend Scratch project that uses a node.js server running on my laptop to control Spotify. It was developed January 13-14 of 2016.
+Another one of the projects for our Exploring Computer Science class was to develop some type of project using [Scratch](https://scratch.mit.edu/about). Scratchify was my submission - a frontend Scratch project that uses a node.js server running on my laptop to control Spotify. It was developed January 13-14 of 2016.
+
+* [View project page](https://scratch.mit.edu/projects/93077193/)
 
 ### Architecture
 
-Scratch introduced [cloud variables]() in __TODO__. These variables can be set through the Scratch project using __TODO__ blocks and update in real time (no need to refresh the page). They were originally intended for __TODO__. After some research, I discovered that these variables could be retrieved from the endpoint `https://scratch.mit.edu/varserver/ID` where `ID` is the [project ID](). The response is encoded in JSON and looks like this:
+A new feature called [Cloud Data](https://wiki.scratch.mit.edu/wiki/Cloud_Data) was introduced in Scratch 2. This allows for Scratch variables to be stored on the Scratch server and persist between game sessions. Another feature is that the variables update within seconds without requiring a page reload. After some research, I discovered the [varserver API](https://wiki.scratch.mit.edu/wiki/Scratch_API_(2.0)#varserver_Interface). Using this, cloud data variables can be retrieved from `https://scratch.mit.edu/varserver/ID` where `ID` is the project ID. The response is encoded in JSON and looks like this:
 
-```
-TODO
+```JSON
+{
+	"variables": [
+		{
+			"name":"☁ volume",
+			"value":"69"
+		},
+		{
+			"name":"☁ id",
+			"value":"5"
+		},
+		{"name":"☁ command",
+		"value":"1"
+		}
+	],
+	"lists":[]
+}
 ```
 
-The [Spotify OS X app](), like many other OS X apps, can be controlled programmatically through [AppleScript](). The package [spotify-node-applescript]() provides a node.js bridge to this functionality, so we can control the Spotify app from node.js.
+The Spotify app, like many other OS X apps, can be controlled programmatically through [AppleScript](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptX/AppleScriptX.html). The package [spotify-node-applescript](https://github.com/andrehaveman/spotify-node-applescript) provides a node.js bridge to this functionality, so we can control the Spotify app from node.js.
 
 ###### Bringing It Together
 
 Here's a screenshot of the interface:
-__TODO__
+
+![Control interface](/UI.png)
 
 1. The Scratch project has three cloud variables: `id`, `command`, and `volume`. When a button is pressed, `command` is changed to reflect what button is pressed and `id` is incremented by 1. `volume` can be manipulated directly by the user as it is presented as a UI component.
 
