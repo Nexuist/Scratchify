@@ -1,5 +1,6 @@
 var spotify = require("spotify-node-applescript");
 var https = require("https");
+var exec = require("child_process").exec;
 
 /* Constants */
 var refreshInterval = 1000; // Milliseconds between refresh
@@ -111,7 +112,8 @@ function parse(vars) {
 				break;
 			case 6:
 				// Special easter egg (see easteregg.applescript for more details)
-				
+				console.log("Easter egg activated");
+				exec("osascript easteregg.applescript", null);
 				break;
 			default:
 				console.log("Unknown command", command);
