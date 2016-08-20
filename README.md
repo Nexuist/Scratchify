@@ -1,27 +1,6 @@
-### Introduction
+### Original Version
 
-Another one of the projects for our Exploring Computer Science class was to develop some type of project using [Scratch](https://scratch.mit.edu). Scratchify was my submission - a frontend Scratch project that uses a node.js server running on my laptop to control Spotify. It was developed January 13-14 of 2016.
-
-### Architecture
-
-Scratch introduced [cloud variables]() in __TODO__. These variables can be set through the Scratch project using __TODO__ blocks and update in real time (no need to refresh the page). They were originally intended for __TODO__. After some research, I discovered that these variables could be retrieved from the endpoint `https://scratch.mit.edu/varserver/ID` where `ID` is the [project ID](). The response is encoded in JSON and looks like this:
-
-```
-TODO
-```
-
-The [Spotify OS X app](), like many other OS X apps, can be controlled programmatically through [AppleScript](). The package [spotify-node-applescript]() provides a node.js bridge to this functionality, so we can control the Spotify app from node.js.
-
-###### Bringing It Together
-
-Here's a screenshot of the interface:
-__TODO__
-
-1. The Scratch project has three cloud variables: `id`, `command`, and `volume`. When a button is pressed, `command` is changed to reflect what button is pressed and `id` is incremented by 1. `volume` can be manipulated directly by the user as it is presented as a UI component.
-
-2. The script requests the JSON endpoint every second, and compares the new response to the old response to see if the user has changed anything.
-
-3. The script will work with spotify-node-applescript to proxy events such as "play", "previous track", etc. to the Spotify app.
+This is the original code as it was left on January 14, 2016. Looking back at it, I think it was pretty badly coded (since it was hastily done) so the version in `master` has been rewritten to be more sane.
 
 ### License
 ```
