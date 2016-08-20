@@ -6,7 +6,7 @@ Another one of the projects for our Exploring Computer Science class was to deve
 
 ### Architecture
 
-A new feature called [Cloud Data](https://wiki.scratch.mit.edu/wiki/Cloud_Data) was introduced in Scratch 2. This allows for Scratch variables to be stored on the Scratch server and persist between game sessions. Another feature is that the variables update within seconds without requiring a page reload. After some research, I discovered the [varserver API](https://wiki.scratch.mit.edu/wiki/Scratch_API_(2.0)#varserver_Interface). Using this, cloud data variables can be retrieved from `https://scratch.mit.edu/varserver/ID` where `ID` is the project ID. The response is encoded in JSON and looks like this:
+A new feature named [Cloud Data](https://wiki.scratch.mit.edu/wiki/Cloud_Data) was introduced in Scratch 2. This allows for Scratch variables to be stored on the Scratch server and persist between game sessions. Another feature is that the variables update within seconds without requiring a page reload. After some research, I discovered the [varserver API](https://wiki.scratch.mit.edu/wiki/Scratch_API_(2.0)#varserver_Interface). Using this, cloud data variables can be retrieved from `https://scratch.mit.edu/varserver/ID` where `ID` is the project ID. The response is encoded in JSON and looks like this:
 
 ```JSON
 {
