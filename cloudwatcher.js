@@ -9,6 +9,7 @@ var opts = {
 	host: "scratch.mit.edu",
 	path: "/varserver/" + projectID
 };
+var easterEggPath = "easteregg.applescript"; // Path to the AppleScript file to execute if the "lol" button is pressed
 
 /* Add timestamp prefix to console methods */
 require("log-prefix")(function() {
@@ -113,7 +114,7 @@ function parse(vars) {
 			case 6:
 				// Special easter egg (see easteregg.applescript for more details)
 				console.log("Easter egg activated");
-				exec("osascript easteregg.applescript", null);
+				exec("osascript " + easterEggPath, null);
 				break;
 			default:
 				console.log("Unknown command", command);
