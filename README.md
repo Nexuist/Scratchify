@@ -2,7 +2,7 @@
 
 Another one of the projects for our Exploring Computer Science class was to develop some type of project using [Scratch](https://scratch.mit.edu/about). Scratchify was my submission - a frontend Scratch project that uses a node.js server running on my laptop to control Spotify. It was developed January 13-14 of 2016.
 
-* [View project page](https://scratch.mit.edu/projects/93077193/)
+* [View project page online](https://scratch.mit.edu/projects/93077193/)
 
 ### Architecture
 
@@ -39,7 +39,7 @@ Here's a screenshot of the interface:
 
 2. The script requests the JSON endpoint every second, and compares the new response to the old response to see if the user has changed anything.
 
-3. The script will work with spotify-node-applescript to proxy events such as "play", "previous track", etc. to the Spotify app.
+3. The script will work with spotify-node-applescript to proxy events such as "play", "previous track", etc. to the Spotify app. There is also a special easter egg (the "lol" button) which, when pressed, will execute an AppleScript file specified in `cloudwatcher.js`.
 
 ### License
 ```
