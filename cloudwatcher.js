@@ -93,9 +93,25 @@ function parse(vars) {
 				console.log("Jumping forward by 10 seconds");
 				jump(10);
 				break;
+			case 2:
+				console.log("Skipping track");
+				spotify.next(callback);
+				break;
 			case 3:
 				console.log("Jumping backwards by 10 seconds");
 				jump(-10);
+				break;
+			case 4:
+				console.log("Reverting to previous track");
+				spotify.previous(callback);
+				break;
+			case 5:
+				console.log("Pausing");
+				spotify.pause(callback);
+				break;
+			case 6:
+				// Special easter egg (see easteregg.applescript for more details)
+				
 				break;
 			default:
 				console.log("Unknown command", command);
