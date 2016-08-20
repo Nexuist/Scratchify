@@ -26,10 +26,10 @@ require("log-prefix")(function() {
 function callback() {
 	spotify.getState(function(err, state) {
 		if (!err) {
-			console.log("Spotify response:", JSON.stringify(state));
+			console.log("Spotify state:", JSON.stringify(state));
 		}
 		else {
-			console.error("Spotify error:", state);
+			console.error("Spotify error:", err);
 		}
 	});
 }
@@ -66,21 +66,39 @@ function refresh() {
 	request.end();
 }
 
+function jump(by) {
+	spotify.getState(function (err, state) {
+		if (!err) {
+			spotify.jumpTo(state.position + by, callback);
+		}
+		else {
+			console.error("Couldn't complete jump:", err);
+		}
+	});
+}
+
 /* Check if id or volume has changed and proxy that info to Spotify */
 function parse(vars) {
 	if (!parse.oldVars) {
 		parse.oldVars = vars;
 	}
 	if (parse.oldVars.id != vars.id) {
-		switch(vars.command) {
+		var command = vars.command * 1; // Convert string to int
+		switch(command) {
 			case 0:
 				console.log("Beginning playback");
 				spotify.play(callback);
 				break;
 			case 1:
+				console.log("Jumping forward by 10 seconds");
+				jump(10);
+				break;
+			case 3:
+				console.log("Jumping backwards by 10 seconds");
+				jump(-10);
 				break;
 			default:
-				console.log("Unknown command", vars.command);
+				console.log("Unknown command", command);
 				break;
 		}
 	}
