@@ -19,8 +19,9 @@ A new feature named [Cloud Data](https://wiki.scratch.mit.edu/wiki/Cloud_Data) w
 			"name":"☁ id",
 			"value":"5"
 		},
-		{"name":"☁ command",
-		"value":"1"
+		{
+			"name":"☁ command",
+			"value":"1"
 		}
 	],
 	"lists":[]
