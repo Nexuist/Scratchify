@@ -6,7 +6,7 @@ Another one of the projects for our Exploring Computer Science class was to deve
 
 ### Architecture
 
-A new feature named [Cloud Data](https://wiki.scratch.mit.edu/wiki/Cloud_Data) was introduced in Scratch 2. This allows for Scratch variables to be stored on the Scratch server and persist between game sessions. Another feature is that the variables update within seconds without requiring a page reload. After some research, I discovered the [varserver API](https://wiki.scratch.mit.edu/wiki/Scratch_API_(2.0)#varserver_Interface). Using this, cloud data variables can be retrieved from `https://scratch.mit.edu/varserver/ID` where `ID` is the project ID. The response is encoded in JSON and looks like this:
+[Cloud Data](https://wiki.scratch.mit.edu/wiki/Cloud_Data) was introduced in Scratch 2. This allows for Scratch variables to be stored on the Scratch server and persist between game sessions. Another feature is that the variables update within seconds without requiring a page reload. After some research, I discovered the [varserver API](https://wiki.scratch.mit.edu/wiki/Scratch_API_(2.0)#varserver_Interface). Using this, cloud data variables can be retrieved from `https://scratch.mit.edu/varserver/ID` where `ID` is the project ID. The response is encoded in JSON and looks like this:
 
 ```JSON
 {
@@ -38,7 +38,7 @@ Here's a screenshot of the interface:
 
 1. The Scratch project has three cloud variables: `id`, `command`, and `volume`. When a button is pressed, `command` is changed to reflect what button is pressed and `id` is incremented by 1. `volume` can be manipulated directly by the user as it is presented as a UI component.
 
-2. The script requests the JSON endpoint every second, and compares the new response to the old response to see if the user has changed anything.
+2. The script requests the JSON endpoint every second, and compares the new response to the old response to see if `id` has been incremented. If `id` is the same as before, it means the user hasn't pressed a new button, so nothing will be done. 
 
 3. The script will work with spotify-node-applescript to proxy events such as "play", "previous track", etc. to the Spotify app. There is also a special easter egg (the "lol" button) which, when pressed, will execute an AppleScript file specified in `cloudwatcher.js`.
 
