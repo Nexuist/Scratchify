@@ -1,6 +1,6 @@
 ### Introduction
 
-Another one of the projects for our Exploring Computer Science class was to develop some type of project using [Scratch](https://scratch.mit.edu/about). Scratchify was my submission - a frontend Scratch project that uses a node.js server running on my laptop to control Spotify. It was developed January 13-14 of 2016.
+Another one of the projects for our Exploring Computer Science class was to develop some type of project using [Scratch](https://scratch.mit.edu/about). Scratchify was my submission - a frontend Scratch project that uses a node.js server running on my laptop to control Spotify. It was developed January 13-14 of 2016. The code was rewritten entirely on August 20, 2016, to be more clean and organized. The original code is available in a separate branch.
 
 * [View project](https://scratch.mit.edu/projects/93077193/)
 
